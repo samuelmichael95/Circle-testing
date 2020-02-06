@@ -2,7 +2,7 @@ node{
    stage('SCM Checkout'){
      git 'https://github.com/samuelmichael95/Circle-testing.git'
    }
-   stage('compile-Package)}
+   stage('compile-Package')}
     sh 'mvn package'
    }
 
