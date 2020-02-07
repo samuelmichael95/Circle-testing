@@ -1,11 +1,327 @@
-node{
-   stage('SCM Checkout'){
-     git 'https://github.com/samuelmichael95/Circle-testing.git'
-   }
-   stage('compile-Package'){
-      // Get maven home path
-      def mvnHome = tool name: '', type: 'maven'
-      sh "${mvnHome}/bin/mvn package"
-   }
 
+
+
+<!DOCTYPE html>
+<html>
+<head id="ctl00_Head1"><title>
+	SIT
+</title><meta name="ROBOTS" content="NONE" /><meta name="ROBOTS" content="NOINDEX,NOFOLLOW" /><meta name="GOOGLEBOT" content="NOARCHIVE" /><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" /><meta name="author" />
+
+  <!-- CSS Global Compulsory -->
+  <link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css" /><link rel="stylesheet" href="../assets/css/style.css" />
+
+  <!-- CSS Header and Footer -->
+  <link rel="stylesheet" href="../assets/css/headers/header-v1.css" /><link rel="stylesheet" href="../assets/css/footers/footer-v2.css" />
+
+  <!-- CSS Implementing Plugins -->
+  <link rel="stylesheet" href="../assets/plugins/animate.css" /><link rel="stylesheet" href="../assets/plugins/line-icons/line-icons.css" /><link rel="stylesheet" href="../assets/plugins/font-awesome/css/font-awesome.min.css" />
+
+  <!-- CSS Theme -->
+  
+  <link rel="stylesheet" href="../assets/css/theme-colors/tes-blue.css" /><link rel="stylesheet" href="../assets/css/theme-skins/dark.css" />
+
+  <!-- CSS Customization -->
+  <link rel="stylesheet" href="../assets/css/custom.css" />
+
+  <!-- JS Global Compulsory -->			
+  <script type="text/javascript" src="https://gdc-svr.tes-amm.com/SIT//assets/plugins/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="https://gdc-svr.tes-amm.com/SIT//assets/plugins/jquery/jquery-migrate.min.js"></script>
+  <script type="text/javascript" src="https://gdc-svr.tes-amm.com/SIT//assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+  <!-- PNotify -->
+  <link rel="stylesheet" href="../assets/customplugins/toastr/toastr.min.css" />
+  <script type="text/javascript" src="https://gdc-svr.tes-amm.com/SIT//assets/customplugins/toastr/toastr.min.js"></script>
+
+</head>
+
+<body style="padding-top: 90px;">
+  <form name="aspnetForm" method="post" action="./Login.aspx" id="aspnetForm">
+<div>
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTU4MTg4OTY0MA9kFgJmD2QWAgIBD2QWAgIDD2QWBAIBD2QWDGYPFgIeB1Zpc2libGVoZAIBDw8WBh4IQ3NzQ2xhc3MFE2NvbG9yLXJlZCBmb250LWJvbGQeBFRleHQFMTxpIGNsYXNzPSJmYSBmYS1idWcgZmEtbGciPjwvaT4mbmJzcDtDaXJjbGUgLSBTSVQeBF8hU0ICAmRkAgIPDxYCHwBoZBYGAgMPDxYCHwIFCFNldHRpbmdzZGQCBQ8PFgIfAgUPQ2hhbmdlIFBhc3N3b3JkZGQCBw8PFgIfAgUGTG9nb3V0ZGQCBg9kFgQCAQ9kFgJmD2QWAgIBDw9kFgIeC3BsYWNlaG9sZGVyZWQCAw8PFgIfAmVkZAIKD2QWAmYPDxYCHwIFEENyZWF0ZSBFcGljb3IgUE9kZAIND2QWAgIFD2QWAgIBD2QWAgIBDw8WBB8CBRRQcm9jZXNzIEluc3RydWN0aW9ucx4HVG9vbFRpcAUZU2hvdyBQcm9jZXNzIEluc3RydWN0aW9uc2RkAgMPZBYEAgEPZBYGZg8PZBYCHwQFCFVzZXJuYW1lZAIBDw9kFgIfBAUIUGFzc3dvcmRkAgIPDxYCHwIFBUxvZ2luZGQCAw9kFgZmDw9kFgIfBAUIVXNlcm5hbWVkAgEPD2QWAh8EBQhQYXNzd29yZGQCAg8PFgIfAgUFTG9naW5kZGSrOccSRtCOJPWse38+CLU/0RXAxfbZXUMdgSnZ56YAvg==" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
 }
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/SIT/WebResource.axd?d=EaEERM_j-4AzkM1kBL9no2sGo68sKkXDIkpZs-b1qmochaoy5miqztdo2QSZgV9WUUjLDMGBmRpvT0j7Sma_PnSFbm9ybWeABHucSlvTnqY1&amp;t=636777013224055265" type="text/javascript"></script>
+
+
+<script src="/SIT/ScriptResource.axd?d=oELXhyuLlEP8Fy8AYmd60Ze9jKPkjejX6aUuWOhxIHgPNwH22tpczWMllMw9m0TGG_tXdan-ukldbfM1vzckPcqwoQ40OXCz_oOm-dbMGye8a761xq3GkjvzL9qYEDBwE85eHoV54LTKlf71-387qnjMUtj4k1Cvyvh-KT5evuFwms7NNtcQdEdfnszJafrY0&amp;t=ffffffff999c3159" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+if (typeof(Sys) === 'undefined') throw new Error('ASP.NET Ajax client-side framework failed to load.');
+//]]>
+</script>
+
+<script src="/SIT/ScriptResource.axd?d=QtvI9SQgN_pLJKRj8mwSesZkW0A8FNlJns0B53eU55NTpc57na7gt1ofixQNAT0g6wXAwmn6XhCLhPnTImriIW4oUKCB0884V0tgrR-o7I_SU9HdfXoDOMqt9DTSB5j3K2fCOlVLhxqSmKoff966qn86JQ_5SWVMAATVtchn6rZNKb4tcvt5B1HZOo1ONXHX0&amp;t=ffffffff999c3159" type="text/javascript"></script>
+<script src="/SIT/WebResource.axd?d=_jz9Pl6Ky99Fe2NQe8Ol0J2KdMMm-KlbpC8ixheWRKp953WHswUOdhplhki6hvX_4oj3y5H8C_niIx-55N9BgHQlsZunONVzr7mPa6Qf1y81&amp;t=636777013224055265" type="text/javascript"></script>
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="34233A52" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAASa1X/WOMsyKgdnbhUnZ8o8XC7xYUQOC7Dr1bxbZ+rsNkJpxyhUAdlJY9UhgzJZgPQf6WNH+TVSr8KcDwRG4C9YmkVohBcOAxipS80g2T83UZ0ikmcPLertHjOB7OBYC6E=" />
+</div>
+    <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManagerMain', 'aspnetForm', [], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+    <div id="ctl00_PanelFormContainer">
+	
+
+      
+
+<!--=== Header v1 ===-->
+<div class="header-v1">
+  
+
+  <!-- Navbar -->
+  <div class="navbar navbar-default mega-menu navbar-fixed-top" role="navigation" >
+    <div class="container">
+
+         <!-- Topbar -->
+          <div class="topbar-v1">
+            <div class="container">
+                <div class="row">
+                <div class="col-md-3" style="padding-top:4px;padding-bottom:4px;">
+                  <span id="ctl00_HeaderControl_LabelSystemIdentifier" class="color-red font-bold"><i class="fa fa-bug fa-lg"></i>&nbsp;Circle - SIT</span>
+                </div>
+
+                
+              </div>
+            </div>
+          </div>
+          <!-- End Topbar -->
+
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="fa fa-bars"></span>
+        </button>
+        <a class="navbar-brand" href="https://gdc-svr.tes-amm.com/SIT/Main/Index.aspx">
+          <img id="logo-header" alt="Logo" src="https://gdc-svr.tes-amm.com/SIT/_Images/Logo_Phoenix.png" width="50px"></a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse mega-menu navbar-responsive-collapse" style="background-color: white;">
+        <ul class="nav navbar-nav">
+          
+        </ul>
+      </div>
+      <!--/navbar-collapse-->
+    </div>
+  </div>
+  <!-- End Navbar -->
+
+</div>
+<!--=== End Header v1 ===-->
+
+
+<div class="breadcrumbs">
+  <div class="container">
+    
+     
+         <div class="form-group">
+             <div class="col-md-4 col-lg-4">
+                <h3 class="pull-left"><span id="ctl00_HeaderControl_LabelHeadline"></span></h3>
+             </div>
+        
+            
+        
+             
+        </div>      
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+
+
+<div class="margin-bottom-20"></div>
+
+<!-- TabMenu -->
+
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 margin-bottom-30">
+            
+  
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+
+    
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"><i class="fa fa-unlock-alt"></i>&nbsp;Login</h3>
+        </div>
+        <div class="panel-body">
+
+          <!-- Linke Spalte -->
+          <div class="col-md-3">
+
+            <div class="align-center margin-top-20">
+              <div class="loginUserIcon">
+                <i class="rounded-x fa fa-user"></i>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Rechte Spalte -->
+          <div class="col-md-9">
+
+            <div class="margin-bottom-20"></div>
+
+            <div class="form-group">
+              <div class="col-md-11">
+                <input name="ctl00$Main$TextUserName" type="text" id="ctl00_Main_TextUserName" class="form-control" placeholder="Username" />
+              </div>
+            </div>
+
+            <div class="margin-bottom-10"></div>
+
+            <div class="form-group">
+              <div class="col-md-11">
+                <input name="ctl00$Main$TextPassword" type="password" id="ctl00_Main_TextPassword" class="form-control" placeholder="Password" />
+              </div>
+            </div>
+
+            <div class="margin-bottom-10"></div>
+
+            <div class="form-group">
+              <div class="col-md-12">
+                <input type="submit" name="ctl00$Main$BtnLogin" value="Login" id="ctl00_Main_BtnLogin" class="btn-u" />
+              </div>
+            </div>
+
+            <div class="margin-bottom-20"></div>
+
+            <div class="form-group">
+              <div class="col-md-11">
+                <div id="ctl00_Main_ValSummary" class="divValSummary" style="color:Red;display:none;">
+
+	</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <a href="UserSendPassword.aspx">Click here, if you have forgotten your password</a>
+
+    
+
+    
+
+
+  </div>
+  <div class="col-md-3"></div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="buttonbar">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="margin-bottom-100"></div>
+
+      
+    
+</div>
+  
+<script type="text/javascript">
+//<![CDATA[
+var Page_ValidationSummaries =  new Array(document.getElementById("ctl00_Main_ValSummary"));
+//]]>
+</script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+
+(function(id) {
+    var e = document.getElementById(id);
+    if (e) {
+        e.dispose = function() {
+            Array.remove(Page_ValidationSummaries, document.getElementById(id));
+        }
+        e = null;
+    }
+})('ctl00_Main_ValSummary');
+WebForm_AutoFocus('ctl00_Main_TextUserName');//]]>
+</script>
+</form>
+  <!-- JS Implementing Plugins -->
+  <script type="text/javascript" src="https://gdc-svr.tes-amm.com/SIT//assets/plugins/back-to-top.js"></script>
+  <script type="text/javascript" src="https://gdc-svr.tes-amm.com/SIT//assets/plugins/smoothScroll.js"></script>
+  <script type="text/javascript" src="https://gdc-svr.tes-amm.com/SIT//assets/plugins/counter/waypoints.min.js"></script>
+  <script type="text/javascript" src="https://gdc-svr.tes-amm.com/SIT//assets/plugins/counter/jquery.counterup.min.js"></script> 
+  <script type="text/javascript" src="https://gdc-svr.tes-amm.com/SIT//assets/plugins/circles-master/circles.js"></script>
+  <!-- JS Customization -->
+  <script type="text/javascript" src="https://gdc-svr.tes-amm.com/SIT//assets/js/custom.js"></script>
+  <!-- JS Page Level -->           
+  <script type="text/javascript" src="https://gdc-svr.tes-amm.com/SIT//assets/js/app.js"></script>
+  <script type="text/javascript" src="https://gdc-svr.tes-amm.com/SIT//assets/js/plugins/circles-master.js"></script>
+
+  
+    <script type="text/javascript">
+      jQuery(document).ready(function () {
+        App.init();
+        $('[data-toggle="tooltip"]').tooltip();
+        $('#btnSearchAndFilter').click(function () {
+          $('#boxSearchAndFilter').fadeToggle();
+          $("input[id$='TextSearch']").focus();
+        });
+        App.initCounter();
+        CirclesMaster.initCirclesMaster1();
+        CirclesMaster.initCirclesMaster2();
+      });
+    </script>
+  
+  
+  <!--[if lt IE 9]>
+      <script src="assets/plugins/respond.js"></script>
+      <script src="assets/plugins/html5shiv.js"></script>
+      <script src="assets/plugins/placeholder-IE-fixes.js"></script>
+  <![endif]-->
+
+</body>
+</html>
