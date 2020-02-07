@@ -1,6 +1,5 @@
-
-
-
+pipeline {
+   agent any
 <!DOCTYPE html>
 <html>
 <head id="ctl00_Head1"><title>
@@ -610,3 +609,23 @@ WebForm_AutoFocus('ctl00_Main_TextUserName');//]]>
 
 </body>
 </html>
+stages {
+      stage('Build') {
+        steps {
+          echo 'Building...'
+          echo "Running ${env.BUILD_ID} ${env.BUILD_DISPLAY_NAME} on ${env.NODE_NAME} and JOB ${env.JOB_NAME}"
+        }
+   }
+   stage('Test') {
+     steps {
+        echo 'Testing...'
+     }
+   }
+   stage('Deploy') {
+     steps {
+       echo 'Deploying...'
+     }
+   }
+  }
+}
+© 2020 GitHub, Inc.
